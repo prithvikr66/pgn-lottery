@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'darumadrop';
+    src: url('../src/assets/fonts/DarumaDropOne-Regular.ttf') format('opentype');
+  }
