@@ -1,5 +1,5 @@
 import { useRecoilState } from "recoil";
-import { walletAddress } from "../atoms/WalletAddress";
+import { walletAddress } from "../../atoms/WalletAddress";
 import { ethers } from "ethers";
 
 const WalletConnect = () => {
