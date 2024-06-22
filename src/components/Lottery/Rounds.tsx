@@ -6,7 +6,7 @@ const Rounds = () => {
         <p>Round 16</p>
         <p>82/100 Tickets</p>
       </div>
-      <div className=" w-full h-[30px] bg-white rounded-[200px] mt-3 shadow-xl">
+      <div className=" w-full h-[25px] bg-white rounded-[200px] mt-3 shadow-xl">
         <div
           className={`bg-[#5DF7A4] rounded-[200px]  h-[100%] `}
           style={{ width: `${progress}%` }}

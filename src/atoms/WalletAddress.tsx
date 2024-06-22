@@ -1,6 +1,6 @@
-import { atom } from 'recoil';
+import { atom } from "recoil";
 
-export const walletAddress = atom<string| null>({
-  key: 'walletAddress', 
-  default: null, 
+export const walletAddress = atom<string | null>({
+  key: "walletAddress",
+  default: null,
 });
