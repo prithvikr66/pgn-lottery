@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { RainbowConnect } from "../RainbowConnect";
+import { useState } from "react";
 
 const NavCloud = ({
   name,
@@ -38,24 +39,42 @@ const NavCloud = ({
 };
 
 const Navbar = () => {
+  const [currentPage, setCurrentPage] = useState("LOTTERY");
+
   return (
     <div className="flex uppercase justify-end text-[20px] text-zinc-50 z-10  ">
       <div className=" flex w-[60%] 2xl:w-[50%] justify-between items-center mt-10">
-        <Link to={"/"}>
-          <div className=" 2xl:block hidden">
+        <Link to={"/"} onClick={() => setCurrentPage("LOTTERY")}>
+          {currentPage === "LOTTERY" ? (
             <NavCloud name="lottery" width="150" height="69" />
-          </div>
-          <div className=" 2xl:hidden">
-            <NavCloud name="lottery" width="120" height="50" />
-          </div>
+          ) : (
+            <p className=" font-darumadrop uppercase text-white text-[20px]">
+              lottery
+            </p>
+          )}
         </Link>
-        <Link to={"/how-to-play"}>
-          <NavCloud name="how to play" width="150" height="69" />
+        <Link to={"/hot-to-play"} onClick={() => setCurrentPage("HOW")}>
+          {currentPage === "HOW" ? (
+            <NavCloud name="how to play" width="150" height="69" />
+          ) : (
+            <p className=" font-darumadrop uppercase text-white text-[20px]">
+              how to play
+            </p>
+          )}
         </Link>
-        <Link to={"/get-pigeon"}>
-          <NavCloud name="get $pigeon" width="150" height="69" />
+        <Link to={"/hot-to-play"} onClick={() => setCurrentPage("GET")}>
+          {currentPage === "GET" ? (
+            <NavCloud name="get $pigeon" width="150" height="69" />
+          ) : (
+            <p className=" font-darumadrop uppercase text-white text-[20px]">
+              get $pigeon
+            </p>
+          )}
         </Link>
-        <RainbowConnect />
+        <RainbowConnect
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+        />
       </div>
     </div>
   );

@@ -1,18 +1,63 @@
-// import pigeon from "../../assets/images/pigeon1.svg";
+// import { useState } from "react";
+import pigeon from "../../assets/images/pigeon1.svg";
+import tickets from "../../assets/images/tickets.png";
 const TicketCounter = () => {
+  // const [ticketNumberSelected, setTicketNumberSelected] = useState(null);
   return (
-    <div className=" w-[30%]  ">
-      <svg
-        viewBox="0 0 356 820"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        className=" w-full  border h-[820px]"
-      >
-        <path
-          d="M278.1 16H40C28.9543 16 20 24.9543 20 36V511.678C20 514.02 20.4115 516.344 21.2157 518.544L44.7288 582.867C47.612 590.754 55.1154 596 63.5131 596H316C327.046 596 336 587.046 336 576V117.109C336 114.183 335.358 111.293 334.119 108.642L296.219 27.5332C292.931 20.4967 285.867 16 278.1 16Z"
-          fill="white"
-        />
-      </svg>
+    <div className=" w-[100%] mt-[-20px] uppercase ">
+      <div className=" flex justify-end z-10 relative top-[70px]">
+        <img src={pigeon} className="w-[70px] xl:w-[80px] h-auto" />
+      </div>
+      <div className=" ticket-counter w-full  bg-white  ">
+        <p className=" text-[24px] text-[#3D3D3D] p-5">ticket counter</p>
+        <img src={tickets} className=" w-[70%] h-auto mx-auto mt-[20px]" />
+        <div className=" w-[80%] mx-auto flex justify-between mt-[20px]">
+          <button
+            className={` text-[24px] w-[17%] text-[#3A80FE] p-[7px] rounded-[4px] border-[1px] bg-[#E4EEFF] border-[#3A80FE] `}
+          >
+            1
+          </button>
+          <button
+            className={` text-[24px] w-[17%] text-[#3A80FE] p-[7px] rounded-[4px] border-[1px] bg-[#E4EEFF] border-[#3A80FE] `}
+          >
+            2
+          </button>
+          <button
+            className={` text-[24px] w-[17%] text-[#3A80FE] p-[7px] rounded-[4px] border-[1px] bg-[#E4EEFF] border-[#3A80FE] `}
+          >
+            3
+          </button>
+          <button
+            className={` text-[24px] w-[17%] text-[#3A80FE] p-[7px] rounded-[4px] border-[1px] bg-[#E4EEFF] border-[#3A80FE] `}
+          >
+            4
+          </button>
+          <button
+            className={` text-[24px] w-[17%] text-[#3A80FE] p-[7px] rounded-[4px] border-[1px] bg-[#E4EEFF] border-[#3A80FE] `}
+          >
+            5
+          </button>
+        </div>
+        <div className=" h-[1px] w-[80%] mx-auto bg-gradient-to-r from-[#3A80FE] to-transparent mt-[20px]" />
+        <div className=" w-[80%] mx-auto flex items-center justify-between mt-[10px]">
+          <p className=" text-[#3D3D3D] lg:text-[20px] xl:text-[24px]">Odds</p>
+          <p className=" text-[24px] text-[#3A80FE]">-</p>
+        </div>
+        <div className=" h-[1px] w-[80%] mx-auto bg-gradient-to-r from-[#3A80FE] to-transparent mt-[10px]" />
+        <div className=" w-[80%]  mx-auto flex items-center justify-between mt-[10px]">
+          <p className=" text-[#3D3D3D] lg:text-[20px] xl:text-[24px]">cost</p>
+          <p className=" text-[24px] text-[#3A80FE]">-</p>
+        </div>
+        <div className=" h-[1px] w-[80%] mx-auto bg-gradient-to-r from-[#3A80FE] to-transparent mt-[10px]" />
+        <div className=" w-full flex justify-center">
+          <button className=" p-[10px] rounded-t-[8px] rounded-bl-[44px] rounded-br-[8px] text-[#5DF7A4] bg-[#3D3D3D] w-[80%] mx-auto uppercase text-[24px] border  mt-[20px] shadow-xl shadow-[#CEDFFF]">
+            connect wallet
+          </button>
+        </div>
+        <p className=" text-center text-[#85B6FF] text-[20px] mt-[20px] pb-[20px]">
+          Balance-
+        </p>
+      </div>
     </div>
   );
 };

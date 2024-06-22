@@ -3,10 +3,19 @@ import { walletAddress } from "../atoms/WalletAddress";
 import { useRecoilState } from "recoil";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
-export const RainbowConnect = () => {
+
+interface RainbowConnectProps {
+  currentPage: any;
+  setCurrentPage: any;
+}
+export const RainbowConnect: React.FC<RainbowConnectProps> = ({
+  currentPage,
+  setCurrentPage,
+}) => {
   const navigate = useNavigate();
   const [wallet, setWallet] = useRecoilState(walletAddress);
   const handleProfileView = () => {
+    setCurrentPage("PROFILE");
     navigate("/profile");
   };
 
@@ -73,8 +82,8 @@ export const RainbowConnect = () => {
               return (
                 <button
                   className={` ${
-                    account?.address ? "bg-[#ffffff]" : "bg-[#3D3D3D]"
-                  }  text-[#5DF7A4] p-4 rounded-[20px] `}
+                    currentPage === "PROFILE" ? "bg-[#3D3D3D] text-white" : " bg-[#ffffff] text-[#5DF7A4]"
+                  }   p-4 rounded-[20px] `}
                   onClick={handleProfileView}
                 >
                   <div className=" flex items-center justify-center gap-2">
