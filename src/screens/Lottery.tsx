@@ -1,3 +1,4 @@
+import Activity from "../components/Lottery/Activity";
 import Navbar from "../components/Lottery/Navbar";
 import Rounds from "../components/Lottery/Rounds";
 import Socials from "../components/Lottery/Socials";
@@ -19,7 +20,7 @@ const Lottery = () => {
           <div className=" w-[68%] xl:w-[70%] 2xl:w-[73%]  flex flex-col gap-5">
             <Rounds />
             <Tickets />
-            <Tickets />
+            <Activity />
           </div>
         </div>
       </div>
