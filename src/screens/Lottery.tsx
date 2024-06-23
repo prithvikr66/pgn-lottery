@@ -1,11 +1,38 @@
+import { useEffect } from "react";
 import Activity from "../components/Lottery/Activity";
 import Navbar from "../components/Lottery/Navbar";
 import Rounds from "../components/Lottery/Rounds";
 import Socials from "../components/Lottery/Socials";
 import TicketCounter from "../components/Lottery/TicketCounter";
 import Tickets from "../components/Lottery/Tickets";
+import { lotteryContract } from "../atoms/Contracts";
+import { ethers } from "ethers";
+import { raceABi , lotteryABI ,lotteryNftTicketABI } from "../abi";
+import { useAccount } from "wagmi";
+import { useSetRecoilState } from "recoil";
+
+const ALCHEMY_API_KEY = "LAne9dVSCnApFpVmdslRX46IC3M7okT2";
+// const RACE_CONTRACT_ADDRESS = "0x02a48148200d7fd2A021eb1541b59C7Aad004607";
+const LOTTERY_CONTRACT_ADDRESS = "0x3FA72577519c2A8360bd478865Ed37EB5cE4a856";
+// const LOTTERY_NFT_TICKET_CONTRACT_ADDRESS = "0x02a48148200d7fd2A021eb1541b59C7Aad004607";
+const alchemyProvider = new ethers.providers.JsonRpcProvider(
+  `https://eth-sepolia.g.alchemy.com/v2/${ALCHEMY_API_KEY}`
+);
 
 const Lottery = () => {
+  const { address } = useAccount();
+  const setLotteryContract = useSetRecoilState(lotteryContract)
+  useEffect(() => {
+    if (address) {
+      const signer = alchemyProvider.getSigner(address);
+      const contractInstance = new ethers.Contract(
+        LOTTERY_CONTRACT_ADDRESS,
+        lotteryABI,
+        signer
+      );
+      setLotteryContract(contractInstance);
+    }
+  }, []);
   return (
     // ------>Background Image <----------------
     <div className="relative bg-cover bg-cen min-h-screen bg-main-bg ">

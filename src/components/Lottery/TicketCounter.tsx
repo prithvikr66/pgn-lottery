@@ -1,8 +1,12 @@
 // import { useState } from "react";
+import { useRecoilState } from "recoil";
 import pigeon from "../../assets/images/pigeon1.svg";
 import tickets from "../../assets/images/tickets.png";
+import { walletAddress } from "../../atoms/WalletAddress.ts";
+
 const TicketCounter = () => {
   // const [ticketNumberSelected, setTicketNumberSelected] = useState(null);
+  const [wallet] = useRecoilState(walletAddress);
   return (
     <div className=" w-[100%] mt-[-20px] uppercase ">
       <div className=" flex justify-end z-10 relative top-[70px]">
@@ -50,9 +54,15 @@ const TicketCounter = () => {
         </div>
         <div className=" h-[1px] w-[80%] mx-auto bg-gradient-to-r from-[#3A80FE] to-transparent mt-[10px]" />
         <div className=" w-full flex justify-center">
-          <button className=" p-[10px] rounded-t-[8px] rounded-bl-[44px] rounded-br-[8px] text-[#5DF7A4] bg-[#3D3D3D] w-[80%] mx-auto uppercase text-[24px] border  mt-[20px] shadow-xl shadow-[#CEDFFF]">
-            connect wallet
-          </button>
+          {wallet ? (
+            <button className=" p-[10px] rounded-t-[8px] rounded-bl-[44px] rounded-br-[8px] text-[#ffffff] bg-[#3A80FE] w-[80%] mx-auto uppercase text-[24px] border  mt-[20px] shadow-xl shadow-[#CEDFFF]">
+              let's go!
+            </button>
+          ) : (
+            <button className=" p-[10px] rounded-t-[8px] rounded-bl-[44px] rounded-br-[8px] text-[#5DF7A4] bg-[#3D3D3D] w-[80%] mx-auto uppercase text-[24px] border  mt-[20px] shadow-xl shadow-[#CEDFFF]">
+              connect wallet
+            </button>
+          )}
         </div>
         <p className=" text-center text-[#85B6FF] text-[20px] mt-[20px] pb-[20px]">
           Balance-

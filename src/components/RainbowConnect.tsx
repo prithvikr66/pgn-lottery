@@ -1,5 +1,5 @@
 import { ConnectButton } from "@rainbow-me/rainbowkit";
-import { walletAddress } from "../atoms/WalletAddress";
+import { walletAddress } from "../atoms/WalletAddress.ts";
 import { useRecoilState } from "recoil";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";

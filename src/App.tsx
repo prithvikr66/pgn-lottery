@@ -2,19 +2,15 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Game from "./screens/Lottery";
 import Profile from "./screens/Profile";
 import "@rainbow-me/rainbowkit/styles.css";
-import {
-  getDefaultConfig,
-  RainbowKitProvider,
-
-} from "@rainbow-me/rainbowkit";
+import { getDefaultConfig, RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import { WagmiProvider } from "wagmi";
-import { base } from "wagmi/chains";
+import { sepolia } from "wagmi/chains";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 
 const config = getDefaultConfig({
   appName: "My RainbowKit App",
   projectId: "1",
-  chains: [base],
+  chains: [sepolia],
   ssr: false,
 });
 
@@ -24,7 +20,7 @@ function App() {
   return (
     <WagmiProvider config={config}>
       <QueryClientProvider client={queryClient}>
-        <RainbowKitProvider >
+        <RainbowKitProvider>
           <BrowserRouter>
             <Routes>
               <Route path="/" element={<Game />} />
