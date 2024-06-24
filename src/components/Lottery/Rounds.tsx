@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { useReadContract } from "wagmi";
 import { lotteryABI } from "../../abi";
-import TicketCounter from "./TicketCounter";
+import { roundNumberState } from "../../atoms/LotteryInfo";
+import { useSetRecoilState } from "recoil";
 
 type LotteryInfo = [
   bigint,
@@ -16,6 +17,7 @@ type LotteryInfo = [
 
 const Rounds = () => {
   const [roundNumber, setRoundNumber] = useState<number | null>();
+  const setRoundNumberState = useSetRecoilState(roundNumberState);
   const [numberOfTicketsSold, setNumberOfTicketsSold] = useState<
     number | null
   >();
@@ -33,20 +35,18 @@ const Rounds = () => {
     args: [roundNumber],
   }) as { data: LotteryInfo | undefined };
 
-  if (tickets) {
-    console.log(Number(tickets[3]));
-  }
+  
 
   useEffect(() => {
     if (lotteryNumber) {
       setRoundNumber(Number(lotteryNumber));
+      setRoundNumberState(Number(lotteryNumber));
     }
     if (tickets) {
       setNumberOfTicketsSold(Number(tickets[3]));
     }
-  }, [lotteryNumber,tickets]);
+  }, [lotteryNumber, tickets]);
 
-  const progress = 82;
   return (
     <div className=" text-white uppercase text-[24px]">
       <div className=" flex justify-between">
@@ -56,7 +56,7 @@ const Rounds = () => {
       <div className=" w-full h-[25px] bg-white rounded-[200px] mt-3 shadow-xl">
         <div
           className={`bg-[#5DF7A4] rounded-[200px]  h-[100%] `}
-          style={{ width: `${progress}%` }}
+          style={{ width: `${numberOfTicketsSold}%` }}
         ></div>
       </div>
     </div>
