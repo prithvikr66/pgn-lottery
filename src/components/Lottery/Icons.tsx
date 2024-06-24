@@ -23,7 +23,6 @@ const DextoolsIcon = () => {
     </svg>
   );
 };
-
 const EtherScanIcon = () => {
   return (
     <svg
@@ -56,7 +55,6 @@ const EtherScanIcon = () => {
     </svg>
   );
 };
-
 const TwitterIcon = () => {
   return (
     <svg
@@ -73,7 +71,6 @@ const TwitterIcon = () => {
     </svg>
   );
 };
-
 const TelegramIcon = () => {
   return (
     <svg
@@ -156,7 +153,6 @@ const UniswapIcon = () => {
     </svg>
   );
 };
-
 const TicketIcon = () => {
   return (
     <svg
@@ -224,7 +220,6 @@ const BirdTokenIcon = () => {
     </svg>
   );
 };
-
 const EtherScanDarkIcon = () => {
   return (
     <svg
@@ -252,6 +247,7 @@ const EtherScanDarkIcon = () => {
     </svg>
   );
 };
+
 export {
   DextoolsIcon,
   UniswapIcon,
