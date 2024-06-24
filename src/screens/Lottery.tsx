@@ -35,7 +35,7 @@ const Lottery = () => {
   }, []);
   return (
     // ------>Background Image <----------------
-    <div className="relative bg-cover bg-cen min-h-screen bg-main-bg ">
+    <div className="relative bg-cover bg-cen min-h-screen blue-sky-bg ">
       {/* ----------->NavBar<---------- */}
       <div className=" w-[85%] xl:w-[80%] mx-auto font-darumadrop">
         <Navbar />

@@ -2,11 +2,7 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {
-      backgroundImage: {
-        "main-bg": "url(./src/assets/images/main-bg.png)",
-      },
-    },
+    extend: {},
     fontFamily: {
       darumadrop: ["darumadrop", "sans-serif"],
     },
