@@ -7,7 +7,7 @@ import TicketCounter from "../components/Lottery/TicketCounter";
 import Tickets from "../components/Lottery/Tickets";
 import { lotteryContract } from "../atoms/Contracts";
 import { ethers } from "ethers";
-import { raceABi , lotteryABI ,lotteryNftTicketABI } from "../abi";
+import { lotteryABI } from "../abi";
 import { useAccount } from "wagmi";
 import { useSetRecoilState } from "recoil";
 
@@ -21,7 +21,7 @@ const alchemyProvider = new ethers.providers.JsonRpcProvider(
 
 const Lottery = () => {
   const { address } = useAccount();
-  const setLotteryContract = useSetRecoilState(lotteryContract)
+  const setLotteryContract = useSetRecoilState(lotteryContract);
   useEffect(() => {
     if (address) {
       const signer = alchemyProvider.getSigner(address);
