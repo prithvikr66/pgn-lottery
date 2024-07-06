@@ -10,7 +10,7 @@ const Socials = () => {
   return (
     <div className=" socials w-[100%] mx-auto mt-[20px] p-[10px]  flex justify-around items-center bg-white">
       <a href="" target="_blank">
-        {" "}
+
         <UniswapIcon />
       </a>
       <a href="" target="_blank">

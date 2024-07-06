@@ -8,7 +8,7 @@ import { sepolia } from "wagmi/chains";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 
 const config = getDefaultConfig({
-  appName: "My RainbowKit App",
+  appName: "PGN DERBY",
   projectId: "1",
   chains: [sepolia],
   ssr: false,

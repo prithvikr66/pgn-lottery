@@ -55,7 +55,7 @@ export const RainbowConnect: React.FC<RainbowConnectProps> = ({
                 return (
                   <button
                     className={` ${
-                      account?.address ? "bg-[#ffffff]" : "bg-[#3D3D3D]"
+                      connected ? "bg-[#ffffff]" : "bg-[#3D3D3D]"
                     }  text-[#5DF7A4] p-4 rounded-[20px] `}
                     onClick={() => {
                       openConnectModal();
